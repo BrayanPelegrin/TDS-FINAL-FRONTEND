@@ -63,7 +63,7 @@ const Login = () => {
       <Wrapper>
         <Title>Iniciar Sesion</Title>
         <Form>
-          <Input placeholder="Nombre de usuario" />
+          <Input placeholder="Correo" />
           <Input placeholder="Contraseña" />
           <buttonarreglado>
             <Button>Entrar</Button>

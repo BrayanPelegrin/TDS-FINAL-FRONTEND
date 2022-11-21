@@ -59,7 +59,7 @@ const Registrar = () => {
           <Input placeholder="Nombre" />
           <Input placeholder="Apellido" />
           <Input placeholder="Nombre de usuario" />
-          <Input placeholder="Correro" />
+          <Input placeholder="Correo" />
           <Input placeholder="Contraseña" type="password"/>
           <Input placeholder="Confirmar contraseña" type="password"/>
           <buttonarreglado>

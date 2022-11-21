@@ -5,6 +5,10 @@ import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import logo from './logo/log.png';
 import { Link } from "react-router-dom";
+import { Perfil } from './Perfil';
+import { IniciarSesion } from './IniciarSesion';
+import { SalirSesion } from './SalirSesion';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Contenedor = styled.div`
     background-color: #2192FF;
@@ -69,6 +73,7 @@ const MenuItems = styled.div`
 `
 
 const Navbar = () => {
+    const {isAuthenticated} = useAuth0();
   return (
     <Contenedor>
         <Envoltura>
@@ -83,9 +88,19 @@ const Navbar = () => {
                 </ContenedorDeBusqueda> 
             </Centro>
             <Derecha> 
-            <Link style={{ textDecoration: 'none' }}to="/Mantenimiento"><MenuItems>Mantenimiento</MenuItems></Link>
-            <Link style={{ textDecoration: 'none' }}to="/registro"><MenuItems>Registro</MenuItems></Link>
-            <Link style={{ textDecoration: 'none' }}to="/login"><MenuItems>Iniciar sesion</MenuItems></Link>
+            <Link style={{ textDecoration: 'none' }}to="/MantenimientoProductos"><MenuItems>Mantenimiento</MenuItems></Link>
+            
+            {isAuthenticated ?(
+            <>
+            <MenuItems>
+                <Perfil/>
+            </MenuItems>
+            <MenuItems>
+                <SalirSesion/>
+            </MenuItems>
+            </>
+            ): (
+            <MenuItems><IniciarSesion/></MenuItems>)}
                 <MenuItems>
                     <Badge badgeContent={5} color="primary">
                         <ShoppingCartIcon color="action" />

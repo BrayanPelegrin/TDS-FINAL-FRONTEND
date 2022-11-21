@@ -1,7 +1,8 @@
 import Inicio from "./paginas/home";
 import Registrar from "./paginas/registro";
 import Login from "./paginas/login";
-import Mantenimiento from "./paginas/Mantenimiento";
+import Mantenimiento from "./paginas/MantenimientoProductos";
+import MantenimientoCategoria from "./paginas/MantenimientoCategoria";
 import Product from "./paginas/Product";
 import ProductList from "./paginas/ProductList";
 import { BrowserRouter as Router, Routes, 
@@ -16,7 +17,8 @@ const App = () => {
         <Route path="home" element={<Inicio />} />
         <Route path="registro" element={<Registrar />} />
         <Route path="login" element={<Login />} />
-        <Route path="Mantenimiento" element={<Mantenimiento />} />
+        <Route path="MantenimientoProductos" element={<Mantenimiento />} />
+        <Route path="MantenimientoCategoria" element={<MantenimientoCategoria />} />
       </Routes>
     </Router>
   </>
